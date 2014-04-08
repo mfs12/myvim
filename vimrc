@@ -107,10 +107,20 @@ function! CleanEol()
 	%s/\( \|\t\)\+$//
 endfunction
 
+function! AvrTags()
+	set tags=tags,tags-avr
+endfunction
+
+function! ArmTags()
+	set tags=tags,tags-arm
+endfunction
+
+function! HostTags()
+	set tags=tags,tags-host
+endfunction
+
 "set tags=./tags,~/.vim/tags/host_tags;
 set tags=tags,host_tags
-
-"source /usr/share/vim/vim73/ftplugin/man.vim
 
 " new stuff
 execute pathogen#infect()
