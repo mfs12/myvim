@@ -13,16 +13,16 @@ set laststatus=2
 set wildmenu
 set wildmode=list:longest,full
 
-" colours
+" fix colours
+set t_Co=256
+
+" colour themes
 "colo dejavu
 "colo morning
 colo delek
 
 "set background=light
 set background=dark
-
-" fix colours
-set t_Co=256
 
 set ignorecase
 set smartcase
