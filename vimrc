@@ -21,6 +21,9 @@ colo delek
 "set background=light
 set background=dark
 
+" fix colours
+set t_Co=256
+
 set ignorecase
 set smartcase
 
