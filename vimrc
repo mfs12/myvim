@@ -1,5 +1,6 @@
 syntax on
 set tabstop=8
+set autoindent
 set smartindent
 set incsearch
 set hlsearch
@@ -18,11 +19,11 @@ set t_Co=256
 
 " colour themes
 "colo dejavu
-"colo morning
-colo delek
+colo morning
+"colo delek
 
-"set background=light
-set background=dark
+set background=light
+"set background=dark
 
 set ignorecase
 set smartcase
@@ -79,12 +80,16 @@ function! UpdateTags()
 	execute ":!ctags -R --languages=C,C++ --c++-kinds=+defgmpstuv --c-kinds=+defgmpstuv --fields=+iaS --extra=+q ./"
 endfunction
 
-function! MyFormat()
+function! FormatMy()
 	set tabstop=8 shiftwidth=8 noexpandtab
 endfunction
 
-function! MobisolFormat()
+function! FormatMobisol()
 	set tabstop=4 shiftwidth=4 expandtab
+endfunction
+
+function! FormatSb()
+	set tabstop=2 shiftwidth=2 expandtab
 endfunction
 
 function! UpdateWebTags()
@@ -110,15 +115,15 @@ function! CleanEol()
 	%s/\( \|\t\)\+$//
 endfunction
 
-function! AvrTags()
+function! TagsAvr()
 	set tags=tags,tags-avr
 endfunction
 
-function! ArmTags()
+function! TageArm()
 	set tags=tags,tags-arm
 endfunction
 
-function! HostTags()
+function! TagsHost()
 	set tags=tags,tags-host
 endfunction
 
