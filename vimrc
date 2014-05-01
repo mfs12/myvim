@@ -2,6 +2,7 @@ syntax on
 set tabstop=8
 set autoindent
 set smartindent
+set cindent
 set incsearch
 set hlsearch
 "set hid " change buffer without saving
@@ -128,7 +129,7 @@ function! TagsHost()
 endfunction
 
 "set tags=./tags,~/.vim/tags/host_tags;
-set tags=tags,host_tags
+set tags=tags,host-tags
 
 " new stuff
 execute pathogen#infect()
