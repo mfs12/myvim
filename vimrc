@@ -128,8 +128,7 @@ function! TagsHost()
 	set tags=tags,tags-host
 endfunction
 
-"set tags=./tags,~/.vim/tags/host_tags;
-set tags=tags,host-tags
+set tags=tags,tags-host
 
 " new stuff
 execute pathogen#infect()
