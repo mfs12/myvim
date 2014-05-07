@@ -81,6 +81,10 @@ function! UpdateTags()
 	execute ":!ctags -R --languages=C,C++ --c++-kinds=+defgmpstuv --c-kinds=+defgmpstuv --fields=+iaS --extra=+q ./"
 endfunction
 
+function! UpdateWebTags()
+	execute ":!ctags -R --languages=JavaScript,HTML ./"
+endfunction
+
 function! FormatMy()
 	set tabstop=8 shiftwidth=8 noexpandtab
 endfunction
@@ -91,10 +95,6 @@ endfunction
 
 function! FormatSb()
 	set tabstop=2 shiftwidth=2 expandtab
-endfunction
-
-function! UpdateWebTags()
-	execute ":!ctags -R --languages=JavaScript,HTML ./"
 endfunction
 
 function! SpellOnEn()
@@ -120,7 +120,7 @@ function! TagsAvr()
 	set tags=tags,tags-avr
 endfunction
 
-function! TageArm()
+function! TagsArm()
 	set tags=tags,tags-arm
 endfunction
 
