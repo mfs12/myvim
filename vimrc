@@ -75,6 +75,13 @@ if v:version >= 700
 	inoremap <expr> <C-N> omni#cpp#maycomplete#Complete()
 endif
 
+set tags=tags,tags-host
+
+" install modules
+execute pathogen#infect()
+
+
+" custom functions
 function! UpdateTags()
 	execute "rm -f tags"
 "	execute ":!ctags -R --languages=C,C++ --c++-kinds=+gpx --c-kinds=+gpx --fields=+iaS --extra=+q ./"
@@ -127,9 +134,4 @@ endfunction
 function! TagsHost()
 	set tags=tags,tags-host
 endfunction
-
-set tags=tags,tags-host
-
-" new stuff
-execute pathogen#infect()
 
