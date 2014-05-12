@@ -92,6 +92,10 @@ function! UpdateWebTags()
 	execute ":!ctags -R --languages=JavaScript,HTML ./"
 endfunction
 
+function! UpdateCscope()
+  execute ":!find . \( -name '*.[chyl]' -o -name \*.cc -o -name \*.hh -o -name \*.cpp \) -print | cscope -bqik-"
+endfunction
+
 function! FormatMy()
 	set tabstop=8 shiftwidth=8 noexpandtab
 endfunction
