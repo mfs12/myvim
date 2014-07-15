@@ -36,6 +36,8 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+map <C-g> <C-W>>
+map <C-s> <C-W><
 
 " Taglist variables
 " Display function name in status bar:
@@ -54,7 +56,7 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 
-set nocp
+set nocompatible
 filetype plugin on 
 
 "let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
