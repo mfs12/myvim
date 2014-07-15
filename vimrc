@@ -29,6 +29,8 @@ set background=light
 set ignorecase
 set smartcase
 
+let mapleader = ","
+
 " Smart way to move btw. windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -57,6 +59,7 @@ filetype plugin on
 
 "let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
 
+" OmniCompletion configuration
 if v:version >= 700
 "	set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
 	let OmniCpp_GlobalScopeSearch   = 1
