@@ -5,39 +5,37 @@ set smartindent
 set cindent
 set incsearch
 set hlsearch
-"set hid " change buffer without saving
+" change buffer without saving
+"set hid
 
 " disable automatic linewrapping when typing
-set textwidth=0 
+set textwidth=0
 " show airline from the beginning
 set laststatus=2
 
 set wildmenu
-set wildmode=list:longest,full
+"set wildmode=list:longest,full
+set wildmode=list:longest,list
 
 " fix colours
 set t_Co=256
 
+" install modules
+execute pathogen#infect()
+
 " colour themes
 "colo dejavu
-colo morning
+"colo morning
 "colo delek
+colo wombat256mod
 
-set background=light
-"set background=dark
+"set background=light
+set background=dark
 
 set ignorecase
 set smartcase
 
 let mapleader = ","
-
-" Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-map <C-g> <C-W>>
-map <C-s> <C-W><
 
 " Taglist variables
 " Display function name in status bar:
@@ -85,10 +83,9 @@ set tags=tags,tags-host
 " install modules
 execute pathogen#infect()
 
-
 " custom functions
 function! UpdateTags()
-	execute "rm -f tags"
+	execute ":!rm -f tags"
 "	execute ":!ctags -R --languages=C,C++ --c++-kinds=+gpx --c-kinds=+gpx --fields=+iaS --extra=+q ./"
 	execute ":!ctags -R --languages=C,C++ --c++-kinds=+defgmpstuv --c-kinds=+defgmpstuv --fields=+iaS --extra=+q ./"
 endfunction
@@ -140,3 +137,23 @@ function! TagsHost()
 	set tags=tags,tags-host
 endfunction
 
+function! IndentLinux()
+"-nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -ce -ci4
+"-cli0 -d0 -di1 -nfc1 -i8 -ip0 -l80 -lp -npcs -nprs -npsl -sai
+"-saf -saw -ncs -nsc -sob -nfca -cp33 -ss -ts8 -il1
+endfunction
+
+" Key mappings
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map <C-g> <C-W>>
+map <C-s> <C-W><
+
+" Update Cscope database
+" Update Ctags database
+" Set format mobisol, solarboard or mine
+" Clean EOLs
+"
