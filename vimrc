@@ -14,8 +14,8 @@ set textwidth=0
 set laststatus=2
 
 set wildmenu
-"set wildmode=list:longest,full
-set wildmode=list:longest,list
+set wildmode=list:longest,full
+"set wildmode=list:longest,list
 
 " fix colours
 set t_Co=256
@@ -55,7 +55,7 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 
 set nocompatible
-filetype plugin on 
+filetype plugin on
 
 "let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
 
@@ -78,14 +78,14 @@ if v:version >= 700
 	inoremap <expr> <C-N> omni#cpp#maycomplete#Complete()
 endif
 
-set tags=tags,tags-host
+set tags=tags,tags-base
 
 " install modules
 execute pathogen#infect()
 
 " custom functions
 function! UpdateTags()
-	execute ":!rm -f tags"
+"	execute ":!rm -f tags"
 "	execute ":!ctags -R --languages=C,C++ --c++-kinds=+gpx --c-kinds=+gpx --fields=+iaS --extra=+q ./"
 	execute ":!ctags -R --languages=C,C++ --c++-kinds=+defgmpstuv --c-kinds=+defgmpstuv --fields=+iaS --extra=+q ./"
 endfunction
@@ -96,6 +96,10 @@ endfunction
 
 function! FormatMy()
 	set tabstop=8 shiftwidth=8 noexpandtab
+endfunction
+
+function! FormatPython()
+	set tabstop=4 shiftwidth=4 expandtab
 endfunction
 
 function! FormatMobisol()
@@ -151,6 +155,10 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 map <C-g> <C-W>>
 map <C-s> <C-W><
+
+" convience mappings to jumb through make output
+map <F5> :cp<CR>
+map <F6> :cn<CR>
 
 " Update Cscope database
 " Update Ctags database
