@@ -22,6 +22,7 @@ set t_Co=256
 
 " install modules
 execute pathogen#infect()
+execute pathogen#helptags()
 
 " colour themes
 "colo dejavu
@@ -34,6 +35,10 @@ set background=dark
 
 set ignorecase
 set smartcase
+
+set nocompatible
+filetype plugin on
+filetype indent on
 
 let mapleader = ","
 
@@ -80,8 +85,9 @@ endif
 
 set tags=tags,tags-base
 
-" install modules
-execute pathogen#infect()
+" Python mode configuration
+let g:pymode_python = 'python'
+let g:pymode_folding = 0
 
 " custom functions
 function! UpdateTags()
