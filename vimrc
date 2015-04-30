@@ -96,6 +96,10 @@ function! UpdateTags()
 	execute ":!ctags -R --languages=C,C++ --c++-kinds=+defgmpstuv --c-kinds=+defgmpstuv --fields=+iaS --extra=+q ./"
 endfunction
 
+function! UpdateGoTags()
+	execute ":!find . -name '*.go' -exec gotags {} \+ > tags"
+endfunction
+
 function! UpdateWebTags()
 	execute ":!ctags -R --languages=JavaScript,HTML ./"
 endfunction
