@@ -17,6 +17,10 @@ set wildmenu
 set wildmode=list:longest,full
 "set wildmode=list:longest,list
 
+" save undo history to file
+set undodir=$HOME/.vim/undo
+set undofile
+
 " fix colours
 set t_Co=256
 
