@@ -28,14 +28,22 @@ set t_Co=256
 execute pathogen#infect()
 execute pathogen#helptags()
 
-" colour themes
-"colo dejavu
-"colo morning
-"colo delek
-colo wombat256mod
+if has("gui_running")
+	set background=light
+	syntax off
+else
+	"set background=light
+	set background=dark
 
-"set background=light
-set background=dark
+	"colo dejavu
+	"colo delek
+	"colo montz
+	"colo msz_montz
+	"colo morning
+	"colo themes
+	"colo wombat256
+	"colo wombat256mod
+endif
 
 set ignorecase
 set smartcase
