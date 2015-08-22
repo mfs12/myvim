@@ -164,7 +164,7 @@ function! TagsHost()
 endfunction
 
 " Key mappings
-" Smart way to move btw. windows
+" easier window movement
 "map <C-j> <C-W>j
 "map <C-k> <C-W>k
 "map <C-h> <C-W>h
