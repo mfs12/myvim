@@ -172,19 +172,21 @@ endfunction
 "map <C-g> <C-W>>
 "map <C-s> <C-W><
 
-" convience mappings to jumb through make output
-map <C-m> :cl<CR>
-map <C-m>c :cc 
-map <C-m>ck :cp<CR>
-map <C-m>cj :cn<CR>
+" error file navigation
+nmap cm :make<CR>
+nmap cl :cl<CR>
+nmap cc :cc 
+nmap ck :cp<CR>
+nmap cj :cn<CR>
 
-" gitgutter mappings
-map <C-j> :GitGutterNextHunk<CR>
-map <C-k> :GitGutterPrevHunk<CR>
-map <C-m>s :GitGutterStageHunk<CR>
-map <C-m>r :GitGutterRevertHunk<CR>
-map <C-m>p :GitGutterPreviewHunk<CR>
+" gitgutter nmappings
+nmap mj :GitGutterNextHunk<CR>
+nmap mk :GitGutterPrevHunk<CR>
+nmap ms :GitGutterStageHunk<CR>
+nmap mr :GitGutterRevertHunk<CR>
+nmap mp :GitGutterPreviewHunk<CR>
 
-" buffer mappings
-map <C-a> :A<CR>
-map <C-l> :ls<CR>
+" buffer nmappings
+nmap b# :b#<CR>
+nmap ba :A<CR>
+nmap bl :ls<CR>
