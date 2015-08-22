@@ -179,11 +179,7 @@ map <C-g> <C-W>>
 map <C-s> <C-W><
 
 " convience mappings to jumb through make output
-map <F5> :cp<CR>
-map <F6> :cn<CR>
-
-" Update Cscope database
-" Update Ctags database
-" Set format mobisol, solarboard or mine
-" Clean EOLs
-"
+map <C-m> :cl<CR>
+map <C-m>c :cc 
+map <C-m>co :cp<CR>
+map <C-m>cp :cn<CR>
