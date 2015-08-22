@@ -163,23 +163,24 @@ function! TagsHost()
 	set tags=tags,tags-host
 endfunction
 
-function! IndentLinux()
-"-nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -ce -ci4
-"-cli0 -d0 -di1 -nfc1 -i8 -ip0 -l80 -lp -npcs -nprs -npsl -sai
-"-saf -saw -ncs -nsc -sob -nfca -cp33 -ss -ts8 -il1
-endfunction
-
 " Key mappings
 " Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-map <C-g> <C-W>>
-map <C-s> <C-W><
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+"map <C-h> <C-W>h
+"map <C-l> <C-W>l
+"map <C-g> <C-W>>
+"map <C-s> <C-W><
 
 " convience mappings to jumb through make output
 map <C-m> :cl<CR>
 map <C-m>c :cc 
-map <C-m>co :cp<CR>
-map <C-m>cp :cn<CR>
+map <C-m>ck :cp<CR>
+map <C-m>cj :cn<CR>
+
+" gitgutter mappings
+map <C-j> :GitGutterNextHunk<CR>
+map <C-k> :GitGutterPrevHunk<CR>
+map <C-m>s :GitGutterStageHunk<CR>
+map <C-m>r :GitGutterRevertHunk<CR>
+map <C-m>p :GitGutterPreviewHunk<CR>
