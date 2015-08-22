@@ -184,3 +184,7 @@ map <C-k> :GitGutterPrevHunk<CR>
 map <C-m>s :GitGutterStageHunk<CR>
 map <C-m>r :GitGutterRevertHunk<CR>
 map <C-m>p :GitGutterPreviewHunk<CR>
+
+" buffer mappings
+map <C-a> :A<CR>
+map <C-l> :ls<CR>
