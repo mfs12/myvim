@@ -207,3 +207,6 @@ nmap mp :GitGutterPreviewHunk<CR>
 nmap b# :b#<CR>
 nmap ba :A<CR>
 nmap bl :ls<CR>
+
+" cscope config
+source $HOME/.vim/myscope.vim
