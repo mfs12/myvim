@@ -33,7 +33,7 @@ if has("gui_running")
 	syntax off
 else
 	"set background=light
-	set background=dark
+	"set background=dark
 
 	"colo dejavu
 	"colo delek
@@ -41,7 +41,7 @@ else
 	"colo msz_montz
 	"colo morning
 	"colo themes
-	"colo wombat256
+	colo wombat256
 	"colo wombat256mod
 endif
 
