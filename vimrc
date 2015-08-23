@@ -103,9 +103,15 @@ let g:pymode_folding = 0
 
 " custom functions
 function! UpdateTags()
-"	execute ":!rm -f tags"
-"	execute ":!ctags -R --languages=C,C++ --c++-kinds=+gpx --c-kinds=+gpx --fields=+iaS --extra=+q ./"
-	execute ":!ctags -R --languages=C,C++ --c++-kinds=+defgmpstuv --c-kinds=+defgmpstuv --fields=+iaS --extra=+q ./"
+	exec ":!ctags -R --languages=C,C++ --c++-kinds=+px --c-kinds=+px --fields=+iaS --extra=+q ."
+endfunction
+
+function! UpdateCscope()
+	if filereadable("./cscope.out")
+		exec "!rm ./cscope.out"
+	endif
+
+	exec ":!find . -regex '.*\.\(s\|c\|h\|hh\|cc\|cpp\|hpp\)$' | xargs cscope"
 endfunction
 
 function! UpdateGoTags()
