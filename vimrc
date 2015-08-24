@@ -107,11 +107,20 @@ function! UpdateTags()
 endfunction
 
 function! UpdateCscope()
+	exec ":cs kill -1"
+
 	if filereadable("./cscope.out")
 		exec "!rm ./cscope.out"
 	endif
 
-	exec ":!find . -regex '.*\.\(s\|c\|h\|hh\|cc\|cpp\|hpp\)$' | xargs cscope"
+	exec ":!cscope -b -R -s $PWD"
+
+	if filereadable("./cscope.out")
+		exec ":cs add cscope.out"
+	endif
+	if filereadable("./cscope-base.out")
+		exec ":cs add cscope-base.out"
+	endif
 endfunction
 
 function! UpdateGoTags()
