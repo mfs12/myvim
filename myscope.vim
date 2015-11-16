@@ -9,6 +9,8 @@ if has("cscope")
 	endif
 	set csverb
 
+	let g:cscope_silent=1
+
 	nmap fc :cs find c <C-R><C-W><CR>
 	nmap fd :cs find d <C-R><C-W><CR>
 	nmap fe :cs find e <C-R><C-W><CR>
