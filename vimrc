@@ -89,7 +89,7 @@ if v:version >= 700
 	let OmniCpp_MayCompleteDot      = 1
 	let OmniCpp_MayCompleteArrow    = 1
 	let OmniCpp_MayCompleteScope    = 0
-	let OmniCpp_LocalSearchDecl     = 0
+	let OmniCpp_LocalSearchDecl     = 1
 	set completeopt=menuone,menu,longest,preview
 
 	inoremap <expr> <C-N> omni#cpp#maycomplete#Complete()
@@ -100,6 +100,8 @@ set tags=tags,tags-base
 " Python mode configuration
 let g:pymode_python = 'python'
 let g:pymode_folding = 0
+
+let g:loaded_racer = 1
 
 " custom functions
 function! UpdateTags()
