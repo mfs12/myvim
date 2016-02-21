@@ -63,13 +63,14 @@ let generate_tags=1
 let Tlist_Use_Horiz_Window=0
 " Shorter commands to toggle Taglist display
 nnoremap TT :TlistToggle<CR>
-map <F4> :TlistToggle<CR>
+"map <F4> :TlistToggle<CR>
 " Various Taglist diplay config:
 let Tlist_Use_Right_Window = 1
 let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
+let Tlist_WinWidth = 50
 
 set nocompatible
 filetype plugin on
