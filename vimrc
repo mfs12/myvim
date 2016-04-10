@@ -56,11 +56,11 @@ let mapleader = ","
 
 " Taglist variables
 " Display function name in status bar:
-let g:ctags_statusline=1
+let g:ctags_statusline = 1
 " Automatically start script
-let generate_tags=1
+let generate_tags = 1
 " Displays taglist results in a vertical window:
-let Tlist_Use_Horiz_Window=0
+let Tlist_Use_Horiz_Window = 0
 " Shorter commands to toggle Taglist display
 nnoremap TT :TlistToggle<CR>
 "map <F4> :TlistToggle<CR>
@@ -73,10 +73,10 @@ let Tlist_File_Fold_Auto_Close = 1
 let Tlist_WinWidth = 50
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-l>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsListSnippets = "<c-l>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
