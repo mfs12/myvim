@@ -85,8 +85,6 @@ let g:UltiSnipsEditSplit="vertical"
 set nocompatible
 filetype plugin on
 
-"let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
-
 " OmniCompletion configuration
 if v:version >= 700
 "	set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
@@ -111,7 +109,7 @@ set tags=tags,tags-base
 " Python mode configuration
 let g:pymode_python = 'python'
 let g:pymode_folding = 0
-
+let g:pymode_rope_goto_definition_cmd = 'e'
 let g:loaded_racer = 1
 
 " custom functions
