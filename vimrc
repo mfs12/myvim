@@ -118,8 +118,6 @@ function! UpdateTags()
 endfunction
 
 function! UpdateCscope()
-	exec ":cs kill -1"
-
 	if filereadable("./cscope.out")
 		exec "!rm ./cscope.out"
 	endif
@@ -132,6 +130,7 @@ function! UpdateCscope()
 	if filereadable("./cscope-base.out")
 		exec ":cs add cscope-base.out"
 	endif
+	exec ":cs reset"
 endfunction
 
 function! UpdateGoTags()
