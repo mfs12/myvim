@@ -8,6 +8,8 @@ set hlsearch
 " change buffer without saving
 "set hid
 
+set cscopetag
+
 " disable automatic linewrapping when typing
 set textwidth=0
 " show airline from the beginning
@@ -23,6 +25,18 @@ set undofile
 
 " fix colours
 set t_Co=256
+
+set nocompatible
+set ignorecase
+set smartcase
+
+set tags=tags,tags-base
+
+set nospell
+set spelllang=en,de
+
+filetype plugin on
+filetype indent on
 
 " install modules
 execute pathogen#infect()
@@ -45,162 +59,57 @@ else
 	"colo wombat256mod
 endif
 
-set ignorecase
-set smartcase
-
-set nocompatible
-filetype plugin on
-filetype indent on
-
 let mapleader = ","
 
-" Taglist variables
-" Display function name in status bar:
-let g:ctags_statusline = 1
-" Automatically start script
-let generate_tags = 1
-" Displays taglist results in a vertical window:
+" Taglist configuration
 let Tlist_Use_Horiz_Window = 0
-" Shorter commands to toggle Taglist display
-nnoremap TT :TlistToggle<CR>
-"map <F4> :TlistToggle<CR>
-" Various Taglist diplay config:
 let Tlist_Use_Right_Window = 1
 let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_WinWidth = 50
+nnoremap TT :TlistToggle<CR>
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" UltiSnips configuration
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsListSnippets = "<c-l>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-
-set nocompatible
-filetype plugin on
-
 " OmniCompletion configuration
-if v:version >= 700
-"	set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
-	let OmniCpp_GlobalScopeSearch   = 1
-	let OmniCpp_DisplayMode         = 0
-	let OmniCpp_NamespaceSearch     = 2
-	let OmniCpp_ShowScopeInAbbr     = 1 "do not show namespace in pop-up
-	let OmniCpp_ShowPrototypeInAbbr = 1 "show prototype in pop-up
-	let OmniCpp_ShowAccess          = 1 "show access in pop-up
-	let OmniCpp_SelectFirstItem     = 0 "select first item in pop-up
-	let OmniCpp_MayCompleteDot      = 1
-	let OmniCpp_MayCompleteArrow    = 1
-	let OmniCpp_MayCompleteScope    = 0
-	let OmniCpp_LocalSearchDecl     = 1
-	set completeopt=menuone,menu,longest,preview
-
-	inoremap <expr> <C-N> omni#cpp#maycomplete#Complete()
-endif
-
-set tags=tags,tags-base
+let OmniCpp_GlobalScopeSearch   = 1
+let OmniCpp_DisplayMode         = 0
+let OmniCpp_NamespaceSearch     = 2
+let OmniCpp_ShowScopeInAbbr     = 1
+let OmniCpp_ShowPrototypeInAbbr = 1
+let OmniCpp_ShowAccess          = 1
+let OmniCpp_SelectFirstItem     = 0
+let OmniCpp_MayCompleteDot      = 1
+let OmniCpp_MayCompleteArrow    = 1
+let OmniCpp_MayCompleteScope    = 1
+let OmniCpp_LocalSearchDecl     = 1
+"set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
+set completeopt=menuone,menu,longest,preview
+inoremap <expr> <C-N> omni#cpp#maycomplete#Complete()
 
 " Python mode configuration
+let g:pymode = 0
 let g:pymode_python = 'python'
 let g:pymode_folding = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
 let g:loaded_racer = 1
 
-" custom functions
-function! UpdateTags()
-	exec ":!ctags -R --languages=C,C++ --c++-kinds=+px --c-kinds=+px --fields=+iaS --extra=+q ."
-endfunction
+" gitgutter configuration
+nmap mj :GitGutterNextHunk<CR>
+nmap mk :GitGutterPrevHunk<CR>
+nmap ms :GitGutterStageHunk<CR>
+nmap mr :GitGutterRevertHunk<CR>
+nmap mp :GitGutterPreviewHunk<CR>
 
-function! UpdateCscope()
-	if filereadable("./cscope.out")
-		exec "!rm ./cscope.out"
-	endif
-
-	exec ":!cscope -b -R -s $PWD"
-
-	if filereadable("./cscope.out")
-		exec ":cs add cscope.out"
-	endif
-	if filereadable("./cscope-base.out")
-		exec ":cs add cscope-base.out"
-	endif
-	exec ":cs reset"
-endfunction
-
-function! UpdateGoTags()
-	execute ":!find . -name '*.go' -exec gotags {} \+ > tags"
-endfunction
-
-function! UpdateWebTags()
-	execute ":!ctags -R --languages=JavaScript,HTML ./"
-endfunction
-
-function! FormatMy()
-	set tabstop=8 shiftwidth=8 noexpandtab
-endfunction
-
-function! FormatPython()
-	set tabstop=4 shiftwidth=4 expandtab
-endfunction
-
-function! FormatMobisol()
-	set tabstop=4 shiftwidth=4 expandtab
-endfunction
-
-function! FormatSb()
-	set tabstop=2 shiftwidth=2 expandtab
-endfunction
-
-function! SpellOnEn()
-	set spell
-	set spelllang=en
-endfunction
-
-function! SpellOnDe()
-	set spell
-	set spelllang=de
-endfunction
-
-function! SpellOff()
-	set nospell
-	set spelllang=
-endfunction
-
-function! CleanEol()
-	%s/\( \|\t\)\+$//
-endfunction
-
-function! TagsAvr()
-	set tags=tags,tags-avr
-endfunction
-
-function! TagsArm()
-	set tags=tags,tags-arm
-endfunction
-
-function! TagsHost()
-	set tags=tags,tags-host
-endfunction
-
-function! HandleURI()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ ">,;:]*')
-  echo s:uri
-  if s:uri != ""
-	  exec "!xdg-open \'" . s:uri . "\'"
-  else
-	  echo "No URI found in line."
-  endif
-endfunction
-map <Leader>w :call HandleURI()<CR>
-
-" Key mappings
-" easier window movement
+" Key mappings easier window movement
 "map <C-j> <C-W>j
 "map <C-k> <C-W>k
 "map <C-h> <C-W>h
@@ -209,18 +118,11 @@ map <Leader>w :call HandleURI()<CR>
 "map <C-s> <C-W><
 
 " error file navigation
-nmap cm :make<CR>
+nmap cm :make all -j20<CR>
 nmap cl :cl<CR>
-nmap cc :cc 
+nmap cc :cc
 nmap ck :cp<CR>
 nmap cj :cn<CR>
-
-" gitgutter nmappings
-nmap mj :GitGutterNextHunk<CR>
-nmap mk :GitGutterPrevHunk<CR>
-nmap ms :GitGutterStageHunk<CR>
-nmap mr :GitGutterRevertHunk<CR>
-nmap mp :GitGutterPreviewHunk<CR>
 
 " buffer nmappings
 nmap b# :b#<CR>
@@ -228,4 +130,8 @@ nmap ba :A<CR>
 nmap bl :ls<CR>
 
 " cscope config
-source $HOME/.vim/myscope.vim
+source $HOME/.vim/myscope.vim " custom functions
+source $HOME/.vim/myfunc.vim " custom functions
+
+map <Leader>t :call UpdateTags()<CR>
+map <Leader>w :call HandleURI()<CR>
