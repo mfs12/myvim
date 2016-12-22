@@ -79,21 +79,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" OmniCompletion configuration
-let OmniCpp_GlobalScopeSearch   = 1
-let OmniCpp_DisplayMode         = 0
-let OmniCpp_NamespaceSearch     = 2
-let OmniCpp_ShowScopeInAbbr     = 1
-let OmniCpp_ShowPrototypeInAbbr = 1
-let OmniCpp_ShowAccess          = 1
-let OmniCpp_SelectFirstItem     = 0
-let OmniCpp_MayCompleteDot      = 1
-let OmniCpp_MayCompleteArrow    = 1
-let OmniCpp_MayCompleteScope    = 1
-let OmniCpp_LocalSearchDecl     = 1
-"set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
 set completeopt=menuone,menu,longest,preview
-inoremap <expr> <C-N> omni#cpp#maycomplete#Complete()
 
 let g:clang_library_path='/usr/lib/libclang.so'
 let g:clang_complete_auto=1
