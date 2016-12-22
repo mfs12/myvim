@@ -95,6 +95,13 @@ let OmniCpp_LocalSearchDecl     = 1
 set completeopt=menuone,menu,longest,preview
 inoremap <expr> <C-N> omni#cpp#maycomplete#Complete()
 
+let g:clang_library_path='/usr/lib/libclang.so'
+let g:clang_complete_auto=1
+let g:clang_complete_copen=1
+let g:clang_complete_macros=1
+"let g:clang_complete_lib_flags=1
+"let g:clang_complete_patterns=1
+
 " Python mode configuration
 let g:pymode = 0
 let g:pymode_python = 'python'
