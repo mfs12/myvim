@@ -93,7 +93,11 @@ let g:pymode = 1
 let g:pymode_python = 'python'
 let g:pymode_folding = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
-let g:loaded_racer = 1
+
+" Rust racer configuration
+let g:racer_cmd = "/usr/bin/racer"
+let $RUST_SRC_PATH="/usr/src/rust/src"
+let g:racer_experimental_completer = 1
 
 " gitgutter configuration
 nmap mj :GitGutterNextHunk<CR>
