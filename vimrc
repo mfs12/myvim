@@ -89,7 +89,7 @@ let g:clang_complete_macros=1
 "let g:clang_complete_patterns=1
 
 " Python mode configuration
-let g:pymode = 0
+let g:pymode = 1
 let g:pymode_python = 'python'
 let g:pymode_folding = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
