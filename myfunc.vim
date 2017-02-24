@@ -90,10 +90,10 @@ function! TagsHost()
 endfunction
 
 function! HandleURI()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ ">,;:]*')
+  let s:uri = matchstr(getline("."), '[a-z]\+:[^ ">,;:]\+')
   echo s:uri
   if s:uri != ""
-	  exec "!xdg-open \'" . s:uri . "\'"
+	  exec "!xdg-open \"" . s:uri . "\""
   else
 	  echo "No URI found in line."
   endif
