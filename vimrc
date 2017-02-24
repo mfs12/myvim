@@ -118,12 +118,10 @@ nmap mr :GitGutterRevertHunk<CR>
 nmap mp :GitGutterPreviewHunk<CR>
 
 " Key mappings easier window movement
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
-"map <C-g> <C-W>>
-"map <C-s> <C-W><
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " error file navigation
 nmap cm :make all -j20<CR>
