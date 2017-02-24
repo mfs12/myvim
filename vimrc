@@ -99,6 +99,17 @@ let g:racer_cmd = "/usr/bin/racer"
 let $RUST_SRC_PATH="/usr/src/rust/src"
 let g:racer_experimental_completer = 1
 
+" ConqueGdb configuration
+autocmd FileType rust :let g:ConqueGdb_GdbExe="rust-gdb"
+nmap <F2> :call conque_gdb#command("backtrace")<CR>'
+nmap <F3> :call conque_gdb#print_word(expand("<cword>"))<CR>'
+nmap <F4> :call conque_gdb#toggle_breakpoint(expand("%:p"), line("."))<CR>'
+nmap <F5> :call conque_gdb#command("run")<CR>'
+nmap <F6> :call conque_gdb#command("continue")<CR>'
+nmap <F7> :call conque_gdb#command("next")<CR>'
+nmap <F8> :call conque_gdb#command("step")<CR>'
+nmap <F9> :call conque_gdb#command("finish")<CR>'
+
 " gitgutter configuration
 nmap mj :GitGutterNextHunk<CR>
 nmap mk :GitGutterPrevHunk<CR>
