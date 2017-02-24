@@ -57,6 +57,22 @@ function! SpellOff()
 	set spelllang=
 endfunction
 
+function! Spell(lang)
+	if a:lang == "off"
+		set nospell
+		set spelllang=
+	elseif a:lang == "en"
+		set spell
+		set spelllang=en
+	elseif a:lang == "de"
+		set spell
+		set spelllang=de
+	else
+		set spell
+		set spelllang=a:lang
+	endif
+endfunction
+
 function! CleanEol()
 	%s/\( \|\t\)\+$//
 endfunction
