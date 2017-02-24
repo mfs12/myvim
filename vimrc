@@ -40,16 +40,8 @@ set completeopt=menuone,menu,longest,preview
 filetype plugin on
 filetype indent on
 
-if has('nvim')
-	let s:editor_root=expand("~/.config/nvim")
-	execute pathogen#infect()
-	execute pathogen#helptags()
-else
-	let s:editor_root=expand("~/.vim")
-	" install modules
-	execute pathogen#infect()
-	execute pathogen#helptags()
-endif
+execute pathogen#infect()
+execute pathogen#helptags()
 
 if has("gui_running")
 	set background=light
