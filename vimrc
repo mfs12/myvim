@@ -35,6 +35,8 @@ set tags=tags,tags-base
 set nospell
 set spelllang=en,de
 
+set completeopt=menuone,menu,longest,preview
+
 filetype plugin on
 filetype indent on
 
@@ -78,8 +80,6 @@ let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-set completeopt=menuone,menu,longest,preview
 
 let g:clang_library_path='/usr/lib/libclang.so'
 let g:clang_complete_auto=1
