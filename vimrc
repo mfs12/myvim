@@ -134,6 +134,9 @@ nmap b# :b#<CR>
 nmap ba :A<CR>
 nmap bl :ls<CR>
 
+" mundo
+nnoremap <F2> :MundoToggle<CR>
+
 " cscope config
 source $HOME/.vim/myscope.vim " custom functions
 source $HOME/.vim/myfunc.vim " custom functions
