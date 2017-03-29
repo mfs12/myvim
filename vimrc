@@ -80,23 +80,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-let g:clang_library_path='/usr/lib/libclang.so'
-let g:clang_complete_auto=1
-let g:clang_complete_copen=1
-let g:clang_complete_macros=1
-"let g:clang_complete_lib_flags=1
-"let g:clang_complete_patterns=1
-
-" Python mode configuration
-let g:pymode = 1
-let g:pymode_python = 'python'
-let g:pymode_folding = 0
-let g:pymode_rope_goto_definition_cmd = 'e'
-
-" Rust racer configuration
-let g:racer_cmd = "/usr/bin/racer"
-let $RUST_SRC_PATH="/usr/src/rust/src"
-let g:racer_experimental_completer = 1
+" YouCompleteMe configuration
+let g:ycm_rust_src_path = "/usr/src/rust/src"
 
 " ConqueGdb configuration
 autocmd FileType rust :let g:ConqueGdb_GdbExe="rust-gdb"
