@@ -73,7 +73,9 @@ let Tlist_WinWidth = 50
 nnoremap TT :TlistToggle<CR>
 
 " UltiSnips configuration
-let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsEnableSnipMate = 1
+"let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsListSnippets = "<c-l>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
