@@ -1,4 +1,5 @@
 syntax on
+
 set tabstop=8
 set autoindent
 set smartindent
@@ -48,7 +49,7 @@ if has("gui_running")
 	syntax off
 else
 	"set background=light
-	"set background=dark
+	set background=dark
 
 	"colo dejavu
 	"colo delek
