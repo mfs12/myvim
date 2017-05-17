@@ -9,8 +9,6 @@ set hlsearch
 " change buffer without saving
 "set hid
 
-set cscopetag
-
 " disable automatic linewrapping when typing
 set textwidth=0
 " show airline from the beginning
@@ -125,9 +123,24 @@ nmap bl :ls<CR>
 " mundo
 nnoremap <F2> :MundoToggle<CR>
 
-" cscope config
-source $HOME/.vim/myscope.vim " custom functions
-source $HOME/.vim/myfunc.vim " custom functions
+" cscope
+set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
+set cscopetag
+set csprg=cscope
+set csto=0
+set csverb
+
+autocmd FileType c,cpp nmap fc :cs find c <C-R><C-W><CR>
+autocmd FileType c,cpp nmap fd :cs find d <C-R><C-W><CR>
+autocmd FileType c,cpp nmap fe :cs find e <C-R><C-W><CR>
+autocmd FileType c,cpp nmap ff :cs find f <C-R><C-W><CR>
+autocmd FileType c,cpp nmap fg :cs find g <C-R><C-W><CR>
+autocmd FileType c,cpp nmap fi :cs find i <C-R><C-W><CR>
+autocmd FileType c,cpp nmap fs :cs find s <C-R><C-W><CR>
+autocmd FileType c,cpp nmap ft :cs find t <C-R><C-W><CR>
+
+" custom functions
+source $HOME/.vim/myfunc.vim
 
 map <Leader>t :call UpdateTags()<CR>
 map <Leader>w :call HandleURI()<CR>
