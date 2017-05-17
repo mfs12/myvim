@@ -42,6 +42,10 @@ filetype indent on
 execute pathogen#infect()
 execute pathogen#helptags()
 
+call plug#begin('~/work/myvim/plugins')
+
+call plug#end()
+
 if has("gui_running")
 	set background=light
 	syntax off
