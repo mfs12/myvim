@@ -144,3 +144,8 @@ source $HOME/.vim/myfunc.vim
 
 map <Leader>t :call UpdateTags()<CR>
 map <Leader>w :call HandleURI()<CR>
+
+" filetypes
+autocmd FileType c,cpp setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType rust setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
