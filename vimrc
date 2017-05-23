@@ -1,3 +1,26 @@
+" plug.vim
+call plug#begin('~/work/myvim/vim/bundle')
+
+Plug 'Rip-Rip/clang_complete'
+Plug 'SirVer/ultisnips'
+Plug 'Valloric/YouCompleteMe'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'biiiep/Colour-Sampler-Pack'
+Plug 'biiiep/cscope.vim'
+Plug 'biiiep/vim-snippets'
+Plug 'bling/vim-airline'
+Plug 'jiangmiao/auto-pairs'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/Conque-GDB'
+Plug 'vim-scripts/gundo'
+Plug 'vim-scripts/taglist.vim'
+
+call plug#end()
+
 syntax on
 
 set tabstop=8
@@ -38,28 +61,6 @@ set completeopt=menuone,menu,longest,preview
 
 filetype plugin on
 filetype indent on
-
-call plug#begin('~/work/myvim/vim/bundle')
-
-Plug 'Rip-Rip/clang_complete'
-Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe'
-Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
-Plug 'biiiep/Colour-Sampler-Pack'
-Plug 'biiiep/cscope.vim'
-Plug 'biiiep/vim-snippets'
-Plug 'bling/vim-airline'
-Plug 'jiangmiao/auto-pairs'
-Plug 'jlanzarotta/bufexplorer'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/Conque-GDB'
-Plug 'vim-scripts/gundo'
-Plug 'vim-scripts/taglist.vim'
-
-call plug#end()
 
 if has("gui_running")
 	set background=light
