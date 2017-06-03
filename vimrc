@@ -1,6 +1,8 @@
 " plug.vim
 call plug#begin('~/work/myvim/vim/bundle')
 
+"Plug 'jiangmiao/auto-pairs'
+Plug 'dantler/vim-alternate'
 Plug 'Rip-Rip/clang_complete'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
@@ -10,7 +12,6 @@ Plug 'biiiep/Colour-Sampler-Pack'
 Plug 'biiiep/cscope.vim'
 Plug 'biiiep/vim-snippets'
 Plug 'bling/vim-airline'
-"Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
